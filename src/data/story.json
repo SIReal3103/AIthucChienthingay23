@@ -3,32 +3,156 @@
   "nodes": {
     "scene_gate": {
       "introVideoUrl": "/videos/intro_street_food.mp4",
+      "audioUrl": "/audios/scene_gate.mp3",
       "scenarioText": "Tan học rồi! Trước cổng trường có xe bán xiên que thơm phức. Bạn sẽ làm gì?",
       "choices": [
         {
           "imageUrl": "/images/choice_street_food.png",
           "altText": "Chọn mua xiên que ở cổng trường",
           "nextId": "scene_eat_street_food",
-          "effects": { "health": -15, "obesity": 5, "beauty": -10 },
-          "feedback": "Cẩn thận nhé! Đồ ăn vỉa hè có thể rất ngon nhưng không phải lúc nào cũng đảm bảo vệ sinh đâu."
+          "effects": { "health": -15, "obesity": 5, "beauty": -10, "knowledge": -5 },
+          "feedback": "Cẩn thận nhé! Đồ ăn vỉa hè có thể rất ngon nhưng không phải lúc nào cũng đảm bảo vệ sinh. Rủi ro ngộ độc thực phẩm là rất cao!"
         },
         {
           "imageUrl": "/images/choice_home_meal.png",
           "altText": "Về nhà ăn cơm mẹ nấu",
           "nextId": "scene_go_home",
           "effects": { "health": 5, "knowledge": 10, "obesity": -2, "beauty": 5 },
-          "feedback": "Lựa chọn thông minh! Ăn uống đúng bữa và đảm bảo vệ sinh là cách tốt nhất để bảo vệ sức khỏe."
+          "feedback": "Lựa chọn thông minh! Ăn uống đúng bữa và đảm bảo vệ sinh là cách tốt nhất để bảo vệ sức khỏe và cơ thể bạn."
+        },
+        {
+          "imageUrl": "/images/choice_shopping_center.png",
+          "altText": "Đi chợ/siêu thị mua sắm thực phẩm",
+          "nextId": "scene_shopping_trip",
+          "effects": { "knowledge": 5 },
+          "feedback": "Một ý tưởng hay để tự tay chọn lựa những thực phẩm tươi ngon và an toàn! Hãy cùng khám phá nào."
         }
       ]
     },
     "scene_eat_street_food": {
       "introVideoUrl": "/videos/outro_bad_choice.mp4",
+      "audioUrl": "/audios/scene_eat_street_food.mp3",
       "scenarioText": "Ôi không, sau khi ăn xiên que, bạn bị đau bụng...",
-      "choices": []
+      "choices": [{
+          "imageUrl": "/images/choice_hospital.png",
+          "altText": "Đi bệnh viện khám bác sĩ ngay lập tức",
+          "nextId": "scene_hospital_visit",
+          "effects": { "health": 5, "knowledge": 15, "beauty": -5 },
+          "feedback": "Đến bệnh viện là lựa chọn đúng đắn khi bị ngộ độc thực phẩm. Bác sĩ sẽ giúp bạn hồi phục và biết cách phòng tránh lần sau. Mặc dù sức khỏe bị ảnh hưởng, nhưng việc xử lý kịp thời đã giảm thiểu rủi ro!"
+        },
+        {
+          "imageUrl": "/images/choice_self_medicate.png",
+          "altText": "Cố chịu đựng ở nhà, tự uống thuốc giảm đau",
+          "nextId": "scene_condition_worsens",
+          "effects": { "health": -10, "obesity": 5, "beauty": -10, "knowledge": -5 },
+          "feedback": "Cực kỳ nguy hiểm! Tự điều trị khi bị ngộ độc thực phẩm có thể khiến tình trạng bệnh trở nên nghiêm trọng hơn, thậm chí đe dọa tính mạng. Luôn hỏi ý kiến bác sĩ khi có dấu hiệu bất thường!"
+        }
+]
     },
     "scene_go_home": {
       "introVideoUrl": "/videos/outro_good_choice.mp4",
-      "scenarioText": "Về nhà, có cơm mẹ nấu ngon tuyệt! Bạn cảm thấy thật khỏe khoắn.",
+      "audioUrl": "/audios/scene_go_home.mp3",
+      "scenarioText": "Về nhà, có cơm mẹ nấu ngon tuyệt! Bạn cảm thấy thật khỏe khoắn và tràn đầy năng lượng.",
+      "choices": []
+    },
+    "scene_shopping_trip": {
+      "introVideoUrl": "/videos/intro_shopping.mp4",
+      "audioUrl": "/audios/scene_shopping_trip.mp3",
+      "scenarioText": "Bạn quyết định đi chợ/siêu thị để tự tay chọn lựa thực phẩm. Có nhiều quầy hàng để bạn ghé qua. Bạn sẽ đến đâu trước tiên?",
+      "choices": [
+        {
+          "imageUrl": "/images/choice_meat_fish_aisle.png",
+          "altText": "Đến quầy thịt, cá tươi sống",
+          "nextId": "scene_meat_fish",
+          "feedback": "Thịt cá là nguồn protein quan trọng, nhưng cũng rất dễ bị hỏng nếu không tươi. Hãy xem kỹ nhé!"
+        },
+        {
+          "imageUrl": "/images/choice_packaged_food_aisle.png",
+          "altText": "Ghé qua khu thực phẩm đóng gói",
+          "nextId": "scene_packaged_goods",
+          "feedback": "Thực phẩm đóng gói tiện lợi nhưng cần cẩn trọng với nhãn mác và hạn sử dụng."
+        },
+        {
+          "imageUrl": "/images/choice_dairy_aisle.png",
+          "altText": "Xem các sản phẩm sữa và chế phẩm từ sữa",
+          "nextId": "scene_dairy_products",
+          "feedback": "Các sản phẩm từ sữa rất tốt cho xương, nhưng phải được bảo quản đúng cách để không bị hỏng."
+        }
+      ]
+    },
+    "scene_meat_fish": {
+      "introVideoUrl": "/videos/intro_meat_fish.mp4",
+      "audioUrl": "/audios/scene_meat_fish.mp3",
+      "scenarioText": "Trước quầy thịt cá, bạn thấy những miếng thịt hồng tươi, săn chắc và những con cá mắt trong veo, vảy sáng bóng. Bên cạnh đó là những miếng thịt đã ngả màu thâm, có mùi lạ và cá mắt đục ngầu, vảy bong tróc.",
+      "choices": [
+        {
+          "imageUrl": "/images/choice_fresh_meat_fish.png",
+          "altText": "Chọn thịt hồng tươi, cá mắt trong veo, vảy sáng bóng",
+          "nextId": "scene_good_food_purchase",
+          "effects": { "health": 15, "knowledge": 20, "beauty": 5 },
+          "feedback": "Tuyệt vời! Thịt cá tươi ngon không chỉ giàu dinh dưỡng mà còn an toàn, không chứa vi khuẩn gây hại. Luôn kiểm tra màu sắc, độ đàn hồi và mùi nhé!"
+        },
+        {
+          "imageUrl": "/images/choice_stale_meat_fish.png",
+          "altText": "Chọn thịt thâm, cá mắt đục vì giá rẻ hơn",
+          "nextId": "scene_bad_food_purchase",
+          "effects": { "health": -25, "obesity": 10, "beauty": -15, "knowledge": -10 },
+          "feedback": "Cực kỳ nguy hiểm! Thịt cá đã biến chất chứa đầy vi khuẩn gây bệnh, có thể dẫn đến ngộ độc thực phẩm nặng. Dấu hiệu của thực phẩm bẩn là màu sắc bất thường, mùi lạ, và độ đàn hồi kém. Đừng bao giờ mua thực phẩm có dấu hiệu hư hỏng!"
+        }
+      ]
+    },
+    "scene_packaged_goods": {
+      "introVideoUrl": "/videos/intro_packaged_food_aisle.mp4",
+      "audioUrl": "/audios/scene_packaged_goods.mp3",
+      "scenarioText": "Bạn đang ở khu thực phẩm đóng gói. Có một gói bánh bao bì nguyên vẹn, hạn sử dụng rõ ràng, in ấn sắc nét. Kế bên là gói khác bị phồng lên, bao bì móp méo, thông tin in ấn mờ nhạt và không thấy rõ hạn sử dụng.",
+      "choices": [
+        {
+          "imageUrl": "/images/choice_good_packaged_food.png",
+          "altText": "Chọn gói bánh bao bì nguyên vẹn, hạn sử dụng rõ ràng",
+          "nextId": "scene_good_food_purchase",
+          "effects": { "health": 10, "knowledge": 15, "obesity": -2 },
+          "feedback": "Thông minh! Bao bì nguyên vẹn bảo vệ thực phẩm khỏi vi khuẩn và bụi bẩn. Hạn sử dụng cho bạn biết sản phẩm còn an toàn để dùng. Luôn đọc kỹ nhãn mác và kiểm tra thông tin sản phẩm!"
+        },
+        {
+          "imageUrl": "/images/choice_bad_packaged_food.png",
+          "altText": "Chọn gói bánh bị phồng, móp méo, không rõ hạn sử dụng",
+          "nextId": "scene_bad_food_purchase",
+          "effects": { "health": -20, "obesity": 5, "beauty": -10, "knowledge": -10 },
+          "feedback": "Cẩn thận! Bao bì bị phồng, móp méo thường là dấu hiệu thực phẩm đã bị hỏng do vi khuẩn sinh khí, hoặc bị côn trùng xâm nhập. Thông tin mờ nhạt, không rõ nguồn gốc cũng rất đáng ngờ. Ăn vào rất dễ ngộ độc. Luôn kiểm tra kỹ bao bì, hạn sử dụng và nguồn gốc!"
+        }
+      ]
+    },
+    "scene_dairy_products": {
+      "introVideoUrl": "/videos/intro_dairy_products.mp4",
+      "audioUrl": "/audios/scene_dairy_products.mp3",
+      "scenarioText": "Trước quầy sữa và chế phẩm, có những hộp sữa chua được bảo quản lạnh đúng cách, nắp đậy kín, nguyên vẹn. Một số hộp khác thì đã bị đặt ngoài nhiệt độ phòng, nắp hơi kênh, bao bì biến dạng và có mùi lạ.",
+      "choices": [
+        {
+          "imageUrl": "/images/choice_good_dairy.png",
+          "altText": "Chọn hộp sữa chua được bảo quản lạnh, nắp kín, nguyên vẹn",
+          "nextId": "scene_good_food_purchase",
+          "effects": { "health": 12, "knowledge": 18, "obesity": -3 },
+          "feedback": "Lựa chọn đúng đắn! Sữa và chế phẩm từ sữa cần được bảo quản lạnh đúng cách để giữ được vi khuẩn có lợi và tránh vi khuẩn gây hại phát triển. Nắp kín, bao bì nguyên vẹn đảm bảo vệ sinh và chất lượng!"
+        },
+        {
+          "imageUrl": "/images/choice_bad_dairy.png",
+          "altText": "Chọn hộp sữa chua bị đặt ngoài, nắp kênh, bao bì biến dạng, có mùi lạ",
+          "nextId": "scene_bad_food_purchase",
+          "effects": { "health": -30, "obesity": 15, "beauty": -20, "knowledge": -15 },
+          "feedback": "Rất nguy hiểm! Sữa chua bị hỏng do không được bảo quản đúng nhiệt độ, bao bì biến dạng, hoặc nắp kênh có thể chứa đầy vi khuẩn độc hại, gây đau bụng, tiêu chảy, ngộ độc nghiêm trọng. Dù có vẻ ngoài bình thường, mùi lạ cũng là dấu hiệu cảnh báo mạnh mẽ. Tránh xa các sản phẩm bị hỏng!"
+        }
+      ]
+    },
+    "scene_good_food_purchase": {
+      "introVideoUrl": "/videos/outro_good_choice.mp4",
+      "audioUrl": "/audios/scene_good_food_purchase.mp3",
+      "scenarioText": "Bạn đã chọn được những thực phẩm tươi ngon và an toàn! Bạn cảm thấy thật an tâm khi chuẩn bị bữa ăn và biết rằng mình đang chăm sóc sức khỏe rất tốt.",
+      "choices": []
+    },
+    "scene_bad_food_purchase": {
+      "introVideoUrl": "/videos/outro_bad_choice.mp4",
+      "audioUrl": "/audios/scene_bad_food_purchase.mp3",
+      "scenarioText": "Bạn đã lựa chọn thực phẩm không an toàn. Sau khi ăn, bạn cảm thấy khó chịu, đau bụng và phải nhập viện. Bài học về việc lựa chọn thực phẩm sạch thật đắt giá!",
       "choices": []
     }
   }
