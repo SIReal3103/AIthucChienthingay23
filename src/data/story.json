@@ -1,0 +1,35 @@
+{
+  "startNodeId": "scene_gate",
+  "nodes": {
+    "scene_gate": {
+      "introVideoUrl": "/videos/intro_street_food.mp4",
+      "scenarioText": "Tan học rồi! Trước cổng trường có xe bán xiên que thơm phức. Bạn sẽ làm gì?",
+      "choices": [
+        {
+          "imageUrl": "/images/choice_street_food.png",
+          "altText": "Chọn mua xiên que ở cổng trường",
+          "nextId": "scene_eat_street_food",
+          "effects": { "health": -15, "obesity": 5, "beauty": -10 },
+          "feedback": "Cẩn thận nhé! Đồ ăn vỉa hè có thể rất ngon nhưng không phải lúc nào cũng đảm bảo vệ sinh đâu."
+        },
+        {
+          "imageUrl": "/images/choice_home_meal.png",
+          "altText": "Về nhà ăn cơm mẹ nấu",
+          "nextId": "scene_go_home",
+          "effects": { "health": 5, "knowledge": 10, "obesity": -2, "beauty": 5 },
+          "feedback": "Lựa chọn thông minh! Ăn uống đúng bữa và đảm bảo vệ sinh là cách tốt nhất để bảo vệ sức khỏe."
+        }
+      ]
+    },
+    "scene_eat_street_food": {
+      "introVideoUrl": "/videos/outro_bad_choice.mp4",
+      "scenarioText": "Ôi không, sau khi ăn xiên que, bạn bị đau bụng...",
+      "choices": []
+    },
+    "scene_go_home": {
+      "introVideoUrl": "/videos/outro_good_choice.mp4",
+      "scenarioText": "Về nhà, có cơm mẹ nấu ngon tuyệt! Bạn cảm thấy thật khỏe khoắn.",
+      "choices": []
+    }
+  }
+}
